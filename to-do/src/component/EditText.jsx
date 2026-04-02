@@ -19,7 +19,7 @@ function EditText(props) {
     }
 
     return (
-        <div className='flex items-center gap-2 flex-1'>
+        <div className='flex items-center gap-2 flex-1 min-w-0 overflow-hidden'>
             <input
                 type="text"
                 name="edit-text"
@@ -30,7 +30,7 @@ function EditText(props) {
                     if (e.key === 'Enter') saveEdit();
 
                 }}
-                className="flex-1 px-3 py-2 border-2 border-blue-400 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-blue-50 text-gray-800"
+                className="flex-1 min-w-0 px-3 py-2 border-2 border-blue-400 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-blue-50 text-gray-800"
                 autoFocus
             />
             <div className="flex gap-1 sm:gap-2 items-center flex-shrink-0">

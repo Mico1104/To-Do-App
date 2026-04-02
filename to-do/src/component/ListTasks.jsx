@@ -19,7 +19,7 @@ function ListTasks(props) {
                     <li className='text-gray-500 text-center py-8'>No tasks yet. Add one above!</li>
                 ) : (
                     props.filteredTasks.map((task) => (
-                            <li key={task.id} style={{ textDecoration: task.completed ? 'line-through' : 'none' }} className='flex border border-gray-300 rounded-md shadow-md justify-between items-center p-3 sm:p-4 mb-4 bg-gray-50 hover:bg-gray-100 transition-colors'>
+                            <li key={task.id} style={{ textDecoration: task.completed ? 'line-through' : 'none' }} className='flex min-w-0 border border-gray-300 rounded-md shadow-md justify-between items-center p-3 sm:p-4 mb-4 bg-gray-50 hover:bg-gray-100 transition-colors overflow-hidden'>
                                 <div className="checkbox mr-2 sm:mr-4 flex-shrink-0">
                                     <input
                                         type="checkbox"
