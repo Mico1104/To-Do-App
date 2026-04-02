@@ -14,7 +14,9 @@ function App() {
   const [filter, setFilter] = useState("All");
   
   // Editing features state
-  const [editId]
+  const [editId, setEditId] = useState(null);
+  const [editText, setEditText] = useState("");
+
 
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
@@ -34,8 +36,27 @@ function App() {
       <div className="container flex-col justify-center items-center max-w-lg text-center px-5 pt-5 bg-white rounded-lg shadow-lg p-8">
         <h1 className="text-4xl font-bold mb-8 text-gray-800">TO-DO APP</h1>
 
-        <Input filteredTasks={filteredTasks} filter={filter} setFilter={setFilter} input={input} setInput={setInput} setTasks={setTasks} />
-        <ListTasks  filteredTasks={filteredTasks} tasks={tasks} setTasks={setTasks} />
+        <Input
+          editId={editId}
+          setEditId={setEditId}
+          editText={editText}
+          setEditText={setEditText}
+          filteredTasks={filteredTasks} 
+          filter={filter} 
+          setFilter={setFilter} 
+          input={input} 
+          setInput={setInput} 
+          setTasks={setTasks} 
+        />
+        <ListTasks
+          editId={editId}
+          setEditId={setEditId}
+          editText={editText}
+          setEditText={setEditText}
+          filteredTasks={filteredTasks} 
+          tasks={tasks} 
+          setTasks={setTasks} 
+        />
         
       </div>
     </div>
