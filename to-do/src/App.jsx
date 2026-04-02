@@ -12,7 +12,7 @@ function App() {
   const [input, setInput] = useState("");
   // filter state
   const [filter, setFilter] = useState("All");
-  
+
   // Editing features state
   const [editId, setEditId] = useState(null);
   const [editText, setEditText] = useState("");
@@ -31,35 +31,55 @@ function App() {
     return true;
   });
 
-  return (
-    <div className="min-h-screen bg-linear-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
-      <div className="container flex-col justify-center items-center max-w-lg text-center px-5 pt-5 bg-white rounded-lg shadow-lg p-8">
-        <h1 className="text-4xl font-bold mb-8 text-gray-800">TO-DO APP</h1>
+  const clearCompleted = () => {
+    const confirmClear = window.confirm("Are you sure you want clear the completed tasks?");
 
-        <Input
-          editId={editId}
-          setEditId={setEditId}
-          editText={editText}
-          setEditText={setEditText}
-          filteredTasks={filteredTasks} 
-          filter={filter} 
-          setFilter={setFilter} 
-          input={input} 
-          setInput={setInput} 
-          setTasks={setTasks} 
-        />
-        <ListTasks
-          editId={editId}
-          setEditId={setEditId}
-          editText={editText}
-          setEditText={setEditText}
-          filteredTasks={filteredTasks} 
-          tasks={tasks} 
-          setTasks={setTasks} 
-        />
-        
+    if (confirmClear) {
+      setTasks(tasks.filter(task => !task.completed))
+    }
+  };
+
+  return (
+    <>
+
+      <div className="min-h-screen bg-linear-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
+        <div className="container flex-col justify-center items-center max-w-lg text-center px-5 pt-5 bg-white rounded-lg shadow-lg p-8">
+          <h1 className="text-4xl font-bold mb-8 text-gray-800">TO-DO APP</h1>
+
+          <Input
+            editId={editId}
+            setEditId={setEditId}
+            editText={editText}
+            setEditText={setEditText}
+            filteredTasks={filteredTasks}
+            filter={filter}
+            setFilter={setFilter}
+            input={input}
+            setInput={setInput}
+            setTasks={setTasks}
+          />
+          <ListTasks
+            editId={editId}
+            setEditId={setEditId}
+            editText={editText}
+            setEditText={setEditText}
+            filteredTasks={filteredTasks}
+            tasks={tasks}
+            setTasks={setTasks}
+          />
+          {tasks.some(task => task.completed) &&
+            <button
+              onClick={clearCompleted}
+              className='ml-2 py-2 px-6 font-bold rounded-sm bg-black text-white hover:bg-gray-800 transition-colors'
+            >
+              Clear Completed
+            </button>
+          }
+        </div>
+
       </div>
-    </div>
+      <h1 className='text-center font-bold text-xl'>@Amoo M.M</h1>
+    </>
   )
 }
 

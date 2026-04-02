@@ -47,7 +47,7 @@ function Input(props) {
                     onChange={(e) => props.setFilter(e.target.value)} 
                     name="filter" 
                     id="filter" 
-                    className='ml-2 py-2.5 px-6 font-bold rounded-sm bg-black text-white hover:bg-gray-800 transition-colors'
+                    className='flex-1 ml-2 py-2.5 px-6 font-bold rounded-sm bg-black text-white hover:bg-gray-800 transition-colors'
                 >
                     <option value="all">All</option>
                     <option value="complete">Complete</option>
