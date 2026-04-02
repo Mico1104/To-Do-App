@@ -22,7 +22,7 @@ function Input(props) {
 
 
     return (
-        <div className="input flex m-auto mb-4">
+        <div className="input flex flex-col sm:flex-row gap-2 mb-4 w-full">
             <input
                 type="text"
                 name="input"
@@ -31,12 +31,12 @@ function Input(props) {
                 onChange={(e) => props.setInput(e.target.value)}
                 onKeyDown={handleKeyDown}
                 placeholder='Enter a task'
-                className="flex-1 max-w-[200px] border shadow-inner border-gray-400 p-2 rounded-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="flex-1 min-w-0 border shadow-inner border-gray-400 p-2 rounded-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
 
             <button 
                 onClick={addTask} 
-                className='ml-2 py-2 px-6 font-bold rounded-sm bg-black text-white hover:bg-gray-800 transition-colors'
+                className='py-2 px-6 font-bold rounded-sm bg-black text-white hover:bg-gray-800 transition-colors whitespace-nowrap'
             >
                 Add
             </button>
@@ -47,7 +47,7 @@ function Input(props) {
                     onChange={(e) => props.setFilter(e.target.value)} 
                     name="filter" 
                     id="filter" 
-                    className='flex-1 ml-2 py-2.5 px-6 font-bold rounded-sm bg-black text-white hover:bg-gray-800 transition-colors'
+                    className='py-2 px-4 font-bold rounded-sm bg-black text-white hover:bg-gray-800 transition-colors'
                 >
                     <option value="all">All</option>
                     <option value="complete">Complete</option>

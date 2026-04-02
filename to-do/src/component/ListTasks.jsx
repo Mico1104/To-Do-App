@@ -13,14 +13,14 @@ function ListTasks(props) {
 
     return (
 
-        <div className='tasks-list flex m-auto' >
-            <ul className='flex-1'>
+        <div className='tasks-list w-full mb-4' >
+            <ul className='w-full'>
                 {props.tasks.length === 0 ? (
                     <li className='text-gray-500 text-center py-8'>No tasks yet. Add one above!</li>
                 ) : (
                     props.filteredTasks.map((task) => (
-                            <li key={task.id} style={{ textDecoration: task.completed ? 'line-through' : 'none' }} className='flex border border-gray-300 rounded-md shadow-md justify-between items-center p-4 mb-4 bg-gray-50 hover:bg-gray-100 transition-colors'>
-                                <div className="checkbox mr-4">
+                            <li key={task.id} style={{ textDecoration: task.completed ? 'line-through' : 'none' }} className='flex border border-gray-300 rounded-md shadow-md justify-between items-center p-3 sm:p-4 mb-4 bg-gray-50 hover:bg-gray-100 transition-colors'>
+                                <div className="checkbox mr-2 sm:mr-4 flex-shrink-0">
                                     <input
                                         type="checkbox"
                                         name="completed"

@@ -42,8 +42,8 @@ function App() {
   return (
     <>
 
-      <div className="min-h-screen bg-linear-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
-        <div className="container flex-col justify-center items-center max-w-lg text-center px-5 pt-5 bg-white rounded-lg shadow-lg p-8">
+      <div className="min-h-screen bg-linear-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4">
+        <div className="container flex-col justify-center items-center w-full max-w-lg text-center px-5 pt-5 bg-white rounded-lg shadow-lg p-8">
           <h1 className="text-4xl font-bold mb-8 text-gray-800">TO-DO APP</h1>
 
           <Input
@@ -70,15 +70,15 @@ function App() {
           {tasks.some(task => task.completed) &&
             <button
               onClick={clearCompleted}
-              className='ml-2 py-2 px-6 font-bold rounded-sm bg-black text-white hover:bg-gray-800 transition-colors'
+              className='mt-4 py-2 px-6 font-bold rounded-sm bg-black text-white hover:bg-gray-800 transition-colors'
             >
               Clear Completed
             </button>
           }
+          <h1 className='text-center font-bold text-xl mt-8 text-gray-600'>@Amoo M.M</h1>
         </div>
 
       </div>
-      <h1 className='text-center font-bold text-xl'>@Amoo M.M</h1>
     </>
   )
 }

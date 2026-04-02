@@ -13,8 +13,8 @@ function Tasks(props) {
     }
     return (
         <>
-            <span className={`flex-1 text-left align-middle leading-relaxed ${props.task.completed ? 'text-gray-500' : 'text-gray-800'}`}>{props.task.text}</span>
-            <div className="list-btn flex justify-center items-center ml-4 gap-2">
+            <span className={`flex-1 text-left align-middle leading-relaxed break-words ${props.task.completed ? 'text-gray-500' : 'text-gray-800'}`}>{props.task.text}</span>
+            <div className="list-btn flex justify-center items-center gap-1 sm:gap-2 flex-shrink-0">
                 <button onClick={() => deleteTasks(props.task.id)} className="p-2 hover:bg-red-100 rounded-full transition-colors"
                 >
                     <img src={deletePng} alt="Delete task" className="w-5 h-5" />

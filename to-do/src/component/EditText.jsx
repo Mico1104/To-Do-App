@@ -33,18 +33,18 @@ function EditText(props) {
                 className="flex-1 px-3 py-2 border-2 border-blue-400 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-blue-50 text-gray-800"
                 autoFocus
             />
-            <div className="flex gap-2 items-center">
+            <div className="flex gap-1 sm:gap-2 items-center flex-shrink-0">
                 <button
                     onClick={saveEdit}
-                    className="flex justify-content items-center p-2 bg-green-500 text-white font-medium rounded-full hover:bg-green-600 transition-colors shadow-md hover:shadow-lg active:scale-95"
+                    className="p-2 bg-green-500 text-white font-medium rounded-full hover:bg-green-600 transition-colors shadow-md hover:shadow-lg active:scale-95"
                 >
-                    <img src={savePng} alt="save" />
+                    <img src={savePng} alt="save" className="w-4 h-4 sm:w-5 sm:h-5" />
                 </button>
                 <button
-                    className="flex justify-content items-center p-2 bg-gray-400 text-white font-medium rounded-full hover:bg-gray-500 transition-colors shadow-md hover:shadow-lg active:scale-95"
+                    className="p-2 bg-gray-400 text-white font-medium rounded-full hover:bg-gray-500 transition-colors shadow-md hover:shadow-lg active:scale-95"
                     onClick={cancelEdit}
                 >
-                    <img src={cancelPng} alt="cancel" />
+                    <img src={cancelPng} alt="cancel" className="w-4 h-4 sm:w-5 sm:h-5" />
                 </button>
             </div>
         </div>
