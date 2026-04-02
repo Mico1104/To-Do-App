@@ -75,10 +75,11 @@ function App() {
               Clear Completed
             </button>
           }
-          <h1 className='text-center font-bold text-xl mt-8 text-gray-600'>@Amoo M.M</h1>
+         
         </div>
-        <h1 className='text-center font-bold text-xl mt-8 text-gray-600'>@Amoo M.M</h1>
+        
       </div>
+      <h1 className='text-center font-bold text-xl mt-8 text-gray-600'>@Amoo M.M</h1>
     </>
   )
 }
